@@ -1,0 +1,19 @@
+{
+  "name": "Elouan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "nanotimer": "^0.3.14",
+    "secret": "^1.0.2",
+    "twitter": "^1.4.0",
+    "twitter-ng": "^0.6.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
