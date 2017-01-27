@@ -1,9 +1,20 @@
+var express = require('express');
+var app     = express();
+
+app.set('port', (process.env.PORT || 5000));
+
+//For avoidong Heroku $PORT error
+app.get('/', function(request, response) {
+    var result = 'App is running'
+    response.send(result);
+}).listen(app.get('port'), function() {
+    console.log('App is running, server is listening on port ', app.get('port'));
+});
 
 
-/* Configure the Twitter API */
-var Twitter = require('twitter');
+var Twitter = require('twitter'); // appelle API TWITTER
 
-var twitter = new Twitter({
+var twitter = new Twitter({  // clées personelles
     consumer_key: 'TI0B71Ebmfz9wA81x9kQtnrda',
     consumer_secret: 'eCglpzfp3GWsfylq8TBhovAqgOE0qcBT5W8ATvigxCsH2EfMBB',
     access_token_key: '823903489847922688-EUTrtsDkv6BD2Wg7xALaSS0QMY7NqVh',
@@ -11,30 +22,19 @@ var twitter = new Twitter({
 });
 
 
-
-// Making a Twit object for connection to the API
-
-
-// Search the stream for a kind of tweet
-
-
-twitter.stream('statuses/filter', { track: '#retirezmoiphotoshop' },
+twitter.stream('statuses/filter', { track: '#retirezmoiphotoshop' }, // stream ON avec trackeur
     function(stream) {
     
 
-  // ... when we get tweet data...
-    stream.on('data', function(tweet) {
+    stream.on('data', function(tweet) { // affiche dans la console
 
-    // print out the text of the tweet that came in
     console.log(tweet.text);
 
-
-
-    twitter.post('statuses/retweet', { id: tweet.id_str }, retweeted);
+    twitter.post('statuses/retweet', { id: tweet.id_str }, retweeted); // retweeter un tweet
 
 
 
-        function retweeted(err, data, response) {
+        function retweeted(err, data, response) {     // permet de ne pas RT un tweet déjà RT  
             if (err) {
                 console.log("Error: " + err.message);
             } else {
