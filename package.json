@@ -1,9 +1,10 @@
 {
-  "name": "Elouan",
+  "name": "rmp.js",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "express": "^4.14.0",
     "nanotimer": "^0.3.14",
     "secret": "^1.0.2",
     "twitter": "^1.4.0",
@@ -11,9 +12,17 @@
   },
   "devDependencies": {},
   "scripts": {
-  	"start": "node rmp.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node rmp.js"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heidegg/rmp.git"
+  },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heidegg/rmp/issues"
+  },
+  "homepage": "https://github.com/heidegg/rmp#readme"
 }
