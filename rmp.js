@@ -1,5 +1,3 @@
-
-
 var Twitter = require('twitter'); // appelle API TWITTER
 
 var twitter = new Twitter({  // clées personelles
